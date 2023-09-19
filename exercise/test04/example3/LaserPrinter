@@ -1,4 +1,4 @@
-package exercise.test04.quize03;
+package exercise.test04.example3;
 
 public class LaserPrinter extends Printer{
     private int extraToner;
