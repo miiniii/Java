@@ -1,4 +1,4 @@
-package exercise.example1.test04;
+package exercise.test04.example1;
 
 public class ProductTest {
 
