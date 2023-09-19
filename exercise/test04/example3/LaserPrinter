@@ -1,0 +1,26 @@
+package exercise.test04.quize03;
+
+public class LaserPrinter extends Printer{
+    private int extraToner;
+    private int useToner;
+
+    public LaserPrinter(String modelname, String manufacturer, String inferface, int pages, int extrapages, int extraToner) {
+        super(modelname, manufacturer, inferface, pages, extrapages);
+        this.extraToner = extraToner;
+    }
+
+    @Override
+    public void print(int pages) {
+        useToner = pages * 3; // 한 장당 토너가 3씩 소모된다고 가정
+
+        if ((pages > extrapages) | (useToner > extraToner)) {
+            System.out.println("인쇄 용지 혹은 토너가 부족하여 인쇄를 못합니다.");
+        } else {
+            System.out.println(pages + "장을 인쇄합니다.");
+            extrapages -= pages;
+            extraToner -= useToner;
+            System.out.println("남은 인쇄용지는 " + extrapages + "장 입니다.");
+            System.out.println("남은 토너는 " + extraToner + " 입니다.");
+        }
+    }
+}
