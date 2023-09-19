@@ -1,4 +1,4 @@
-package exercise.example2.test04;
+package exercise.test04.example2;
 
 public class Mp3Test {
 
