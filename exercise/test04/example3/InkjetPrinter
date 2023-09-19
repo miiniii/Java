@@ -1,4 +1,4 @@
-package exercise.test04.example3.quize03;
+package exercise.test04.example3;
 
 public class InkjetPrinter extends Printer{
     private int extraInkjet;
