@@ -1,0 +1,27 @@
+package exercise.test04.example3.quize03;
+
+public class InkjetPrinter extends Printer{
+    private int extraInkjet;
+    private int useInkjet;
+
+    public InkjetPrinter(String modelname, String manufacturer, String inferface, int pages, int extrapages, int extraInkjet) {
+        super(modelname, manufacturer, inferface, pages, extrapages);
+        this.extraInkjet = extraInkjet;
+    }
+
+    @Override
+    public void print(int pages) {
+        useInkjet = pages * 2; // 한 장당 잉크가 2씩 소모된다고 가정
+
+        if ((pages > extrapages)|(useInkjet > extraInkjet)){
+            System.out.println("인쇄 용지 혹은 잉크가 부족하여 인쇄를 못합니다.");
+        } else{
+            System.out.println(pages+"장을 인쇄합니다.");
+            extrapages -= pages;
+            extraInkjet -= useInkjet;
+            System.out.println("남은 인쇄용지는 " + extrapages + "장 입니다.");
+            System.out.println("남은 잉크는 " + extraInkjet + " 입니다.");
+        }
+    }
+
+}
